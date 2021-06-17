@@ -40,11 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'accounts',
     'chatbox',
     'rest_framework',
     'corsheaders',
     'knox',
+    'accounts'
 ]
 
 REST_FRAMEWORK = {
