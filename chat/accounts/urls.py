@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from knox import views as knox_views
 
 router = DefaultRouter()
-router.register('api/auth/register', RegisterViewSet)
+router.register('api/auth/register', RegisterViewSet,)
 
 
 urlpatterns = [

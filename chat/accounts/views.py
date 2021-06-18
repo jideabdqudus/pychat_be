@@ -1,19 +1,20 @@
-from rest_framework import viewsets, filters, permissions
+from rest_framework import viewsets, filters
 from rest_framework.response import Response
 from knox.models import AuthToken
 from rest_framework.authentication import TokenAuthentication
 from .serializers import UserProfileSerializer
 from .models import UserProfile
+from .permissions import UpdateOwnProfile
 
 
 class RegisterViewSet(viewsets.ModelViewSet):
     """Handle Creating and Updating Profile"""
     serializer_class = UserProfileSerializer
     queryset = UserProfile.objects.all()
-    #authentication_classes = (TokenAuthentication,)
-    #permission_classes = (permissions.UpdateOwnProfile,)
-    #filter_backends = (filters.SearchFilter,)
-    #search_fields = ('username', 'email')
+    authentication_classes = (TokenAuthentication,)
+    permission_classes = (UpdateOwnProfile,)
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('username', 'email')
 
     # def post(self, request, *args, **kwargs):
     #     serializer = self.get_serializer(data=request.data)
