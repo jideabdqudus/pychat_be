@@ -42,14 +42,11 @@ INSTALLED_APPS = [
 
     'chatbox',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
-    'knox',
     'accounts'
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
