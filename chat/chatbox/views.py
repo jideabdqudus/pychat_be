@@ -1,7 +1,7 @@
 from .models import Post
 from rest_framework import viewsets
 from .serializers import PostSerializer
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.authentication import TokenAuthentication
 from .permissions import UpdateOwnPost
 
@@ -14,7 +14,7 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     permission_classes = (
         UpdateOwnPost,
-        IsAuthenticated
+        IsAuthenticatedOrReadOnly
     )
     serializer_class = PostSerializer
 
