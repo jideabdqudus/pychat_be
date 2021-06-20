@@ -1,4 +1,4 @@
-from rest_framework import viewsets, filters, status
+from rest_framework import viewsets, filters
 from rest_framework.authentication import TokenAuthentication
 from .serializers import UserProfileSerializer
 from .models import UserProfile
