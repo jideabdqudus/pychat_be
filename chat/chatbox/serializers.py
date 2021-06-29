@@ -8,5 +8,3 @@ class PostSerializer (serializers.ModelSerializer):
         model = Post
         fields ='__all__'
         extra_kwargs = {'owner': {'read_only': True}}
-
-
